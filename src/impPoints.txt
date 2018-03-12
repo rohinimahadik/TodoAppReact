@@ -52,3 +52,50 @@ ES7
 
 thunk- to call api - 
 sagas- to call api - work like-  async await
+______________________________________________________________________
+
+
+12 March
+
+Application----->
+
+ Dashboard - Candidate List View
+    Name - Sorting 
+    Experience
+    Test Status
+    Result
+    L1 Discussion
+    L2 Dis
+    Final
+
+1) Name Experience btnTime when exam done accept/reject blue/red --- 
+
+2) Candidate List - 
+    Schedule L1
+    Name
+    DD - L1 List
+    DateTime Picker
+    two urls- resume/evaluation
+    cancel / Submit
+
+Schedule L2-
+same like L1
+
+3) Like 2 grid
+Name, year of Exp, CV, evaluation sheet link, HR Name, State, txt-Result
+Open Form-
+
+Name, resume, HR Name, test score, evaluation result - DD,
+Senariority, Feedback-txt Area,
+submit/cancel-btn
+
+another similar form with addition -L1
+
+
+_____________________________________________________________
+1) for creating form field- make separate component for form
+2) simple git
+3) Bootstrap - SAAS
+4) use local storage
+5) Data structure
+

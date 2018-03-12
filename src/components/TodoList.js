@@ -10,13 +10,15 @@ class TodoList extends Component{
         const { listItemArr } = this.props;
         return(
             <div className="todo-list flex-parent">
-                {listItemArr.map((list) =>
-                    <TodoListItem listItem = {list}/>
-                )}
+                
             </div>
         )
     }
 }
-
+/*
+{listItemArr.map((list) =>
+                    <TodoListItem listItem = {list}/>
+                )}
+*/
 export default TodoList;
 

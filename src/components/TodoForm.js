@@ -6,27 +6,45 @@ class TodoForm extends Component{
         super(props)
 
         this.state = {
-            todolist:''
+          // todolist:''
+            todolist:[],
+            input:''
         }
     this.inputUpdated = this.inputUpdated.bind(this)
-    this.submitTodoList = this.submitTodoList.bind(this)
+    this.todoListUpdated = this.todoListUpdated.bind(this)
+    //this.submitTodoList = this.submitTodoList.bind(this)
     }
 
     inputUpdated(e){
         //console.log("e==> ",e.target.name)
-        const { value } = e.target
-        this.setState({todolist: value})
+        e.preventDefault();
+       // const { value } = e.target.value
+        this.setState({input: e.target.value})
     }
 
-    submitTodoList(e){
+    todoListUpdated(e){
+        e.preventDefault()
+        this.setState(prevState => ({
+            todolist: prevState.todolist.concat(this.state.input),
+            input: ''
+        })
+      
+   )
+  console.log("this=> ", this.state)
+}
+   
+
+    /*submitTodoList(e){
         e.preventDefault();
 
-        const { todolist } = this.state;
+        const { input } = this.state;
         const { onSubmit } = this.props;
 
-        onSubmit(todolist);
-        this.setState({todolist:''})
-    }
+        //onSubmit(todolist);
+        onSubmit()
+        
+        //this.setState({todolist:''})
+    }*/
 
     
 
@@ -39,9 +57,11 @@ class TodoForm extends Component{
                         className="form-control"
                         type="input"
                         name="todolist"
-                        value = {this.state.todolist}
-                        onInput={this.inputUpdated}/>
-                   <button type="submit" className = "btn btn-success">Add in Todo List</button>
+                        //value = {this.state.todolist}
+                        onInput={this.inputUpdated}
+                        value = {this.state.input}/>
+                        
+                   <button type="submit" className = "btn btn-success" onClick={this.todoListUpdated}>Add in Todo List</button>
                 </form>
             </div>
         )

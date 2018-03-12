@@ -46,7 +46,7 @@ class App extends Component {
         </p>
         <TodoForm onSubmit={this.onFormSubmit}/>
 
-        <TodoList listItemArr ={}/>
+        <TodoList listItemArr ={listItemArrState}/>
       </div>
     );
   }
