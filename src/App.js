@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './custom.css';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 //import  get  from 'axios'
@@ -39,14 +40,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to My First React Application</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <TodoForm onSubmit={this.onFormSubmit}/>
-
-        <TodoList listItemArr ={listItemArrState}/>
+        <div className="panel-custom">
+          <TodoForm  onSubmit={this.onFormSubmit}/>
+        </div>  
+        <div>
+          <TodoList listItemArr ={listItemArrState}/>
+        </div>
       </div>
     );
   }
