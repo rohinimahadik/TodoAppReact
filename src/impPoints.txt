@@ -1,0 +1,54 @@
+Some Important Points-----> 
+
+<----------- Redux ------------->
+
+sadas
+
+action
+reducers
+store
+provider - nothing but system which connect redux with react/react component
+containers
+components - smart component- actually connect to store,  dump component
+
+
+4 easy steps of Redux---->
+
+
+1) store_________Reducer
+     |________State
+
+2) Reducer(Agent takes action and provide info to store, nothing but pure function)_______________ State
+   combineReducer - to combine multiple reducers, so work as only one reducer is present in store(redux)          |_______________ Action
+
+3) Subscription (Obserable patterns)
+
+4) Dispatch (action)-Event Trigger     
+
+
+
+Mode- - store
+Controller - 2,3,4
+view- react component                       
+
+
+_____________________________________________________________
+
+React state is component state
+local storage is catche not a js obj
+Three principals of redux
+1) one single source of store - only one store for entire application (if we want then we can copy state of the store not the store, )
+2) you can not modified store, you can create new copy of store (store is immutable, you can not modified data in same state )
+3) store should be modified only by using pure function - takes input and get output, pure functions can not be dependent on 3rd party function or api, output of pure function only depend on input which provided to pure function
+
+
+
+take reference to the store state which is copy of store state by using immutable liabrary of js - to improve performance
+_____________________________________________________________
+
+redux thunk, redux salas, react logger
+predictable state container, predictable mean(no uncertainity in function)  - redux defination
+ES7
+
+thunk- to call api - 
+sagas- to call api - work like-  async await
