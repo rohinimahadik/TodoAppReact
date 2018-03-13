@@ -8,34 +8,37 @@ import TodoList from './components/TodoList'
 //import TodoList from './components/TodoList'
 
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor ( props ) {
+    super ( props )
 
-    this.state={
-      todolist:''
+    this.state = {
+      todolist:[]
     }
 
-    this.onFormSubmit = this.onFormSubmit.bind(this)
+  //  console.log("app==> ", this.props.input)
+    //this.getTodoList = this.getTodoList.bind ( this )
+    console.log("props", this.todolist)
   }
 
- /* onFormSubmit(todolist){
-    console.log("todolist--> ", todolist)
+   getTodoList = (todolistArr) => {
 
-    this.setState({todolist})
-  }
+        this.setState({todolist: todolistArr},
+          ()=>{
+            console.log("app todo List==> ", this.state.todolist)
+          //  this.props.todolist = this.state.todolist;
+          }
+        );
+
+    }
+
+/*
+{
+            (this.state.todolist).map((item)=>{
+                <h1>{item}</h1>
+            })
+          }
 */
-
-  onFormSubmit(todolist){
-      this.setState({todolist})
-    /*get('http://localhost:3000/weather/${todolist}')
-      .then(({data}) => {
-        const {list:listItem} = data;
-        this.setState({todolist})
-    })*/
-  }
-
   render() {
-     const { listItemArrState } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -43,10 +46,10 @@ class App extends Component {
           <h1 className="App-title">Welcome to My First React Application</h1>
         </header>
         <div className="panel-custom">
-          <TodoForm  onSubmit={this.onFormSubmit}/>
+          <TodoForm onGetTodoList={this.getTodoList}/>
         </div>  
-        <div>
-          <TodoList listItemArr ={listItemArrState}/>
+        <div className="panel-custom">
+          <TodoList setTodoListElem = {this.state.todolist}/>
         </div>
       </div>
     );
